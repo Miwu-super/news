@@ -1,0 +1,158 @@
+/* ---------- 全局样式 ---------- */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* ---------- Header 样式 ---------- */
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+}
+
+/* ---------- 新闻列表样式 ---------- */
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.news-list h2 {
+    margin-top: 0;
+}
+
+.news-list .news-meta {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* ---------- 新闻详情样式 ---------- */
+
+.news-details h1 {
+    margin-bottom: 10px;
+}
+
+.news-details .news-meta {
+    margin-bottom: 20px;
+}
+
+/* ---------- 评论样式 ---------- */
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-list li {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.comment-meta {
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* ---------- 表单样式 ---------- */
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+form textarea {
+    height: 120px;
+}
+
+form button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* ---------- 搜索框样式 ---------- */
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 6px;
+    width: 200px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+/* ---------- 分类列表样式 ---------- */
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.category-list li {
+    display: inline-block;
+    margin-right: 10px;
+}

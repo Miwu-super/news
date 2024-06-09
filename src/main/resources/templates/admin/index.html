@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员后台</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container">
+    <h1>管理员后台</h1>
+
+    <ul>
+        <li><a th:href="@{/admin/news}">新闻管理</a></li>
+        <li><a th:href="@{/admin/categories}">分类管理</a></li>
+        <!-- 可以添加其他管理功能的链接 -->
+    </ul>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

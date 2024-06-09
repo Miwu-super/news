@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${news.title}">新闻详情</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+
+<div class="container">
+    <h1 th:text="${news.title}"></h1>
+    <p class="news-meta">
+        作者: <span th:text="${news.author}"></span> |
+        发布时间: <span th:text="${#temporals.format(news.publishDate, 'yyyy-MM-dd HH:mm')}"></span>
+    </p>
+    <p th:text="${news.content}"></p>
+
+    <h2>评论</h2>
+    <ul class="comment-list">
+        <li th:each="comment : ${news.comments}">
+            <p th:text="${comment.content}"></p>
+            <p class="comment-meta">
+                <span th:text="${comment.author}"></span> -
+                <span th:text="${#temporals.format(comment.publishDate, 'yyyy-MM-dd HH:mm')}"></span>
+            </p>
+        </li>
+    </ul>
+
+    <form th:action="@{/news/{id}/comments(id=${news.id})}" th:object="${newComment}" method="post" class="comment-form">
+        <h3>发表评论</h3>
+        <textarea th:field="*{content}" placeholder="写下你的评论"></textarea>
+        <input type="text" th:field="*{author}" placeholder="你的昵称">
+        <button type="submit">提交评论</button>
+    </form>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

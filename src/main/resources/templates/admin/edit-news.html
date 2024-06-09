@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑新闻</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+
+<div class="container">
+    <h1>编辑新闻</h1>
+
+    <form th:action="@{/admin/news/{id}(id=${news.id})}" method="post" th:object="${news}">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label for="title">标题:</label>
+            <input type="text" id="title" th:field="*{title}" required>
+        </div>
+        <div>
+            <label for="content">内容:</label>
+            <textarea id="content" th:field="*{content}" required></textarea>
+        </div>
+        <div>
+            <label for="author">作者:</label>
+            <input type="text" id="author" th:field="*{author}" required>
+        </div>
+        <div>
+            <label for="category">分类:</label>
+            <select id="category" th:field="*{category.id}" required>
+                <option value="">请选择分类</option>
+                <option th:each="category : ${categoryList}"
+                        th:value="${category.id}" th:text="${category.name}"
+                        th:selected="${category.id == news.category.id}"></option>
+            </select>
+        </div>
+        <button type="submit">保存</button>
+    </form>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
